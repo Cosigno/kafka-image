@@ -12,6 +12,8 @@ RUN wget -q http://apache.mirrors.spacedump.net/kafka/"$KAFKA_VERSION"/kafka_"$S
     tar xfz /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz -C /opt && \
     rm /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz
 
+ADD start-kafka.sh /usr/bin/start-kafka.sh
+
 WORKDIR $KAFKA_HOME
 EXPOSE 2181 9092
 
